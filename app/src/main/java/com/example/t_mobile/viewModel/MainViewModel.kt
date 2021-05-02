@@ -14,26 +14,27 @@ import kotlinx.coroutines.launch
 import java.lang.Exception
 
 
-class HomeViewModel: ViewModel() {
-
-
-    private  val TAG = "HomeViewModel"
+class MainViewModel: ViewModel() {
+    private  val TAG = "MainViewModel"
+    private val _apiState = MutableLiveData<ApiState<List<Card>>>()
+    val apiState: LiveData<ApiState<List<Card>>>
+        get() = _apiState
 
     fun getResponse() {
-        Log.d(TAG, "tmobileresponse: get got")
+        _apiState.postValue(ApiState.Loading)
         try {
-
-
             viewModelScope.launch(Dispatchers.IO) {
-                val tmobileResponse: TmobileResponse = TmobileRepo.getTmobileResponse()
-                Log.d(TAG, "getTmobileResponse: ${tmobileResponse}")
-
-
+                val tmobileResponse: TmobileResponse? = TmobileRepo.getTmobileResponse()
+                if (tmobileResponse != null) {
+                    ApiState.Success(tmobileResponse.page?.cards)
+                }
             }
         }catch (e: Exception){
-            Log.d(TAG, "getResponse: $e")
+            ApiState.Error("Network error, please try again.")
         }
         }
-    
 
+    fun toggleCompletedState() {
+        _apiState.value = ApiState.Completed
+    }
 }

@@ -4,7 +4,7 @@
 <data>
     <variable
         name="home_view_model"
-        type="com.example.t_mobile.viewModel.HomeViewModel" />
+        type="com.example.t_mobile.viewModel.MainViewModel" />
 </data>
     <LinearLayout
     android:orientation="vertical"

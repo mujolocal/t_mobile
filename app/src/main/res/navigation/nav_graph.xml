@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment3">
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/homeFragment3"
+        android:id="@+id/homeFragment"
         android:name="com.example.t_mobile.view.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment3_to_cardsFragment2"
+            app:destination="@id/cardsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardsFragment"
+        android:name="com.example.t_mobile.view.CardsFragment"
+        android:label="CardsFragment" />
 </navigation>

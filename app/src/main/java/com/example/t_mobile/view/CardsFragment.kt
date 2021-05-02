@@ -1,35 +1,20 @@
 package com.example.t_mobile.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.viewModels
-import com.example.gm_coding.util.ApiState
 import com.example.t_mobile.R
 import com.example.t_mobile.databinding.FragmentHomeBinding
 import com.example.t_mobile.viewModel.MainViewModel
 
-
-
-class HomeFragment : Fragment(R.layout.fragment_home) {
-    private  val TAG = "HomeFragment"
+class CardsFragment : Fragment(R.layout.fragment_cards) {
     private val mainVM by viewModels<MainViewModel>()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         FragmentHomeBinding.bind(view).apply {
             lifecycleOwner = viewLifecycleOwner
             homeViewModel = mainVM
-        }
-        mainVM.apiState.observe(viewLifecycleOwner) { response ->
-            Log.d(TAG, "onViewCreated: api response = $response")
-            if (response is ApiState.Success) {
-                Log.d(TAG, "onViewCreated: api success")
-                mainVM.toggleCompletedState()
-            }else{
-                Log.d(TAG, "onViewCreated: api failure")
-            }
         }
     }
 }
