@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 object RetrofitInstance {
-    private const val BASE_URL = "https://private-8ce77c-tmobiletest.apiary-mock.com/test/home"
+    private const val BASE_URL = "https://private-8ce77c-tmobiletest.apiary-mock.com/test/"
 
     private val client = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY

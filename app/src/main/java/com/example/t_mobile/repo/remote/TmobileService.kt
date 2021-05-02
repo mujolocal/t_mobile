@@ -9,7 +9,7 @@ import retrofit2.http.GET
 
 interface TmobileService {
 
-    @GET("search")
-    fun getTmobileResponse():Call<TmobileResponse>
+    @GET("home")
+    suspend fun getTmobileResponse():TmobileResponse
 
 }

@@ -21,7 +21,7 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="@{()-> home_view_model.getTmobileResponse()}"
+        android:onClick="@{()-> home_view_model.getResponse()}"
         android:text="get Tmobile"/>
 
 </LinearLayout>
