@@ -24,9 +24,9 @@ class MainViewModel: ViewModel() {
         _apiState.postValue(ApiState.Loading)
         try {
             viewModelScope.launch(Dispatchers.IO) {
+                _apiState.postValue(ApiState.Loading)
                 val tmobileResponse: TmobileResponse? = TmobileRepo.getTmobileResponse()
                 if (tmobileResponse != null) {
-                    Log.d(TAG, "getResponse: not null")
                     _apiState.postValue(ApiState.Success(tmobileResponse.page?.cards))
                 }
             }
