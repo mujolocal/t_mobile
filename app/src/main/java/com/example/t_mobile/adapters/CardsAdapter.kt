@@ -2,7 +2,9 @@ package com.example.t_mobile.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.t_mobile.databinding.CardItemBinding
 import com.example.t_mobile.model.Card
 
@@ -18,9 +20,18 @@ class CardsAdapter(
 
     override fun onBindViewHolder(
         holder: TrackViewHolder, position: Int
-    ) = with(holder.binding) { card = results[position] }
+    ) = with(holder.binding) {
+        Glide.with(image.context)
+            .load(results[position].card?.image?.url.toString())
+            .into(image)
+        card = results[position]
+
+
+     }
 
     override fun getItemCount() = results.size
+
+
 
     class TrackViewHolder(val binding: CardItemBinding) : RecyclerView.ViewHolder(binding.root)
 }
