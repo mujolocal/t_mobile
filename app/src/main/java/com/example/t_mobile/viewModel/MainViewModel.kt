@@ -1,14 +1,14 @@
 package com.example.t_mobile.viewModel
-
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.gm_coding.repo.TmobileRepo
-import com.example.gm_coding.util.ApiState
+
 import com.example.t_mobile.model.Card
 import com.example.t_mobile.model.TmobileResponse
+import com.example.t_mobile.repo.TmobileRepo
+import com.example.t_mobile.util.ApiState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.Exception
@@ -16,8 +16,8 @@ import java.lang.Exception
 
 class MainViewModel: ViewModel() {
     private  val TAG = "MainViewModel"
-    private val _apiState = MutableLiveData<ApiState<List<Card>>>()
-    val apiState: LiveData<ApiState<List<Card>>>
+    private val _apiState = MutableLiveData<ApiState<List<Card>?>>()
+    val apiState: LiveData<ApiState<List<Card>?>>
         get() = _apiState
 
     fun getResponse() {
@@ -26,7 +26,8 @@ class MainViewModel: ViewModel() {
             viewModelScope.launch(Dispatchers.IO) {
                 val tmobileResponse: TmobileResponse? = TmobileRepo.getTmobileResponse()
                 if (tmobileResponse != null) {
-                    ApiState.Success(tmobileResponse.page?.cards)
+                    Log.d(TAG, "getResponse: not null")
+                    _apiState.postValue(ApiState.Success(tmobileResponse.page?.cards))
                 }
             }
         }catch (e: Exception){

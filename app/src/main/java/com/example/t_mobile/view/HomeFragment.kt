@@ -5,9 +5,10 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.viewModels
-import com.example.gm_coding.util.ApiState
+
 import com.example.t_mobile.R
 import com.example.t_mobile.databinding.FragmentHomeBinding
+import com.example.t_mobile.util.ApiState
 import com.example.t_mobile.viewModel.MainViewModel
 
 
@@ -27,8 +28,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             if (response is ApiState.Success) {
                 Log.d(TAG, "onViewCreated: api success")
                 mainVM.toggleCompletedState()
-            }else{
-                Log.d(TAG, "onViewCreated: api failure")
+
             }
         }
     }

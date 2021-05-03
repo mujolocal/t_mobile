@@ -1,6 +1,7 @@
-package com.example.gm_coding.repo
+package com.example.t_mobile.repo
 
-import com.example.gm_coding.repo.remote.RetrofitInstance
+import com.example.t_mobile.remote.RetrofitInstance
+
 
 object TmobileRepo {
 
