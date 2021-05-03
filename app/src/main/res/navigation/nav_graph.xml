@@ -13,5 +13,9 @@
     <fragment
         android:id="@+id/cardsFragment"
         android:name="com.example.t_mobile.view.CardsFragment"
-        android:label="CardsFragment" />
+        android:label="CardsFragment" >
+        <argument
+            android:name="cards"
+            app:argType="com.example.t_mobile.model.Card[]" />
+    </fragment>
 </navigation>

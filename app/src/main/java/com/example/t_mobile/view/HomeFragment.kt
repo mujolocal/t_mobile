@@ -29,8 +29,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             if (response is ApiState.Success) {
                 Log.d(TAG, "onViewCreated: api success")
 
-                val action = HomeFragmentDirections.actionHomeFragmentToCardsFragment()
-                findNavController().navigate(action)
+                val action = response.cards?.let {
+                    HomeFragmentDirections.actionHomeFragmentToCardsFragment(
+                        it.toTypedArray()
+                    )
+                }
+                if (action != null) {
+                    findNavController().navigate(action)
+                }
                 mainVM.toggleCompletedState()
             }
         }
