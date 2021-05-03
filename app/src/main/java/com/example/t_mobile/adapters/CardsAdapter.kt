@@ -30,10 +30,6 @@ class CardsAdapter(
         Glide.with(image.context)
             .load(results[position].card?.image?.url.toString())
             .into(image)
-        if (results[position].card?.image == null){
-            Log.d(TAG, "onBindViewHolder: this image is null")
-            image.layoutParams.height = 300
-        }
         card = results[position]
 
 
