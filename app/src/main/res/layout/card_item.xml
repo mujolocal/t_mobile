@@ -14,39 +14,39 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_height="wrap_content">
+
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
+            android:translationZ="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{card.card.title.value.toString()}"
             android:textAppearance="?textAppearanceHeadline6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/image"
             app:layout_constraintTop_toBottomOf="@id/description"
             tools:text="JAY-Z Blue" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/description"
+            android:translationZ="2dp"
             android:text="@{card.card.description.value.toString()}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?textAppearanceHeadline6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/image"
+            app:layout_constraintBottom_toBottomOf="@id/image"
       />
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/image"
+            android:translationZ="0dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
