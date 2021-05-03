@@ -7,7 +7,7 @@
         android:name="com.example.t_mobile.view.HomeFragment"
         android:label="HomeFragment" >
         <action
-            android:id="@+id/action_homeFragment3_to_cardsFragment2"
+            android:id="@+id/action_homeFragment_to_cardsFragment"
             app:destination="@id/cardsFragment" />
     </fragment>
     <fragment

@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 
 import com.example.t_mobile.R
 import com.example.t_mobile.databinding.FragmentHomeBinding
@@ -27,8 +28,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             Log.d(TAG, "onViewCreated: api response = $response")
             if (response is ApiState.Success) {
                 Log.d(TAG, "onViewCreated: api success")
-                mainVM.toggleCompletedState()
 
+                val action = HomeFragmentDirections.actionHomeFragmentToCardsFragment()
+                findNavController().navigate(action)
+                mainVM.toggleCompletedState()
             }
         }
     }
