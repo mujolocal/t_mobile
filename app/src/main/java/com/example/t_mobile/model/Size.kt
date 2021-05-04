@@ -13,4 +13,4 @@ data class Size(
     val height: Int?,
     @Json(name = "width")
     val width: Int?
-): Parcelable
+) : Parcelable

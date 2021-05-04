@@ -11,4 +11,4 @@ import kotlinx.parcelize.Parcelize
 data class FontX(
     @Json(name = "size")
     val size: Int?
-): Parcelable
+) : Parcelable

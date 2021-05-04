@@ -13,4 +13,4 @@ data class Image(
     val size: Size?,
     @Json(name = "url")
     val url: String?
-): Parcelable
+) : Parcelable

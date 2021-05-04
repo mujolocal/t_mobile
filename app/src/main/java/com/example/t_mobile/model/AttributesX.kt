@@ -13,4 +13,4 @@ data class AttributesX(
     val font: FontX?,
     @Json(name = "text_color")
     val textColor: String?
-): Parcelable
+) : Parcelable

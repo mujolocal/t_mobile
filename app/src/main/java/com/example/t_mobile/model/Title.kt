@@ -13,4 +13,4 @@ data class Title(
     val attributes: AttributesXX?,
     @Json(name = "value")
     val value: String?
-): Parcelable
+) : Parcelable

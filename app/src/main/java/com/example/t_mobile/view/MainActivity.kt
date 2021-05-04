@@ -1,7 +1,7 @@
 package com.example.t_mobile.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.t_mobile.R
 import com.example.t_mobile.databinding.ActivityMainBinding

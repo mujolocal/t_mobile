@@ -1,17 +1,11 @@
 package com.example.t_mobile.adapters
 
-import android.app.ActionBar
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.t_mobile.databinding.CardItemBinding
 import com.example.t_mobile.model.Card
-import com.example.t_mobile.model.Image
 
 class CardsAdapter(
     private val results: List<Card>
@@ -33,10 +27,9 @@ class CardsAdapter(
         card = results[position]
 
 
-     }
+    }
 
     override fun getItemCount() = results.size
-
 
 
     class TrackViewHolder(val binding: CardItemBinding) : RecyclerView.ViewHolder(binding.root)

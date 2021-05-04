@@ -11,4 +11,4 @@ import kotlinx.parcelize.Parcelize
 data class TmobileResponse(
     @Json(name = "page")
     val page: Page?
-): Parcelable
+) : Parcelable

@@ -2,20 +2,18 @@ package com.example.t_mobile.view
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-
 import com.example.t_mobile.R
 import com.example.t_mobile.databinding.FragmentHomeBinding
 import com.example.t_mobile.util.ApiState
 import com.example.t_mobile.viewModel.MainViewModel
 
 
-
 class HomeFragment : Fragment(R.layout.fragment_home) {
-    private  val TAG = "HomeFragment"
+    private val TAG = "HomeFragment"
     private val mainVM by viewModels<MainViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
