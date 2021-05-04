@@ -29,7 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="@{()-> home_view_model.getResponse()}"
-        android:text="@string/response_btn_txt"/>
+        android:text="@string/response_btn_txt"
+        app:toggleButtonState="@{home_view_model.apiState}"/>
 
 </LinearLayout>
 </layout>
